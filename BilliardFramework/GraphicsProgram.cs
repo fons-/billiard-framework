@@ -77,7 +77,7 @@ namespace BilliardFramework
 		public void DrawBall(Vector2 position, int n)
 		{
 			GL.Color4(BallColor(n));
-			DrawImage(position - .5f * new Vector2(ballRadius, ballRadius), ballRadius, ballRadius, "ball");
+			DrawImage(position - new Vector2(ballRadius, ballRadius), 2f * ballRadius, 2f * ballRadius, "ball");
 			GL.Color4(Color4.White);
 		}
 

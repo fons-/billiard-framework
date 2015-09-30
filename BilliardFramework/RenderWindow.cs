@@ -49,7 +49,8 @@ namespace BilliardFramework
 			Console.WriteLine("Initializing textures...");
 
 			TextureManager.AddTexture("default", @"Content/textures/defaultTexture.png", TextureMinFilter.Linear, TextureMagFilter.Nearest);
-			TextureManager.AddTexture("ball", @"Content/textures/ball.png", TextureMinFilter.Linear, TextureMagFilter.Nearest);
+			TextureManager.AddTexture("ball", @"Content/textures/ball2.png", TextureMinFilter.Linear, TextureMagFilter.Nearest);
+			TextureManager.AddTexture("background", @"Content/textures/background.png", TextureMinFilter.Linear, TextureMagFilter.Linear);
 
 			GL.Disable(EnableCap.Lighting);
 			GL.Disable(EnableCap.CullFace);
@@ -79,6 +80,14 @@ namespace BilliardFramework
 			GL.Ortho(0.0, ClientRectangle.Width, ClientRectangle.Height, 0.0, -1.0, 1.0);
 			GL.MatrixMode(MatrixMode.Modelview);
 			GL.LoadIdentity();
+
+			GL.BindTexture(TextureTarget.Texture2D, TextureManager.GetTexture("background"));
+			GL.Begin(PrimitiveType.Quads);
+			GL.TexCoord2(0f, Height / 256f); GL.Vertex2(Vector2.Zero);
+			GL.TexCoord2(0f, 0f); GL.Vertex2(new Vector2(0, Height));
+			GL.TexCoord2(Width / 256f, 0f); GL.Vertex2(new Vector2(Width, Height));
+			GL.TexCoord2(Width / 256f, Height / 256f); GL.Vertex2(new Vector2(Width, 0));
+			GL.End();
 
 			program.Render();
 

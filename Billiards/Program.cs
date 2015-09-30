@@ -15,10 +15,11 @@ namespace Billiards
 			// Hier begint het programma: alle code in deze functie wordt 1 keer opgeroepen als het programma start.
 
 			// Handige dingen:
-			RenderWindow.Instance.ClientSize = new Size(500, 300); // Verandert de grootte van het spel
+			RenderWindow.Instance.ClientSize = new Size(508, 254); // Verandert de grootte van het spel
 			RenderWindow.Instance.WindowBorder = WindowBorder.Fixed; // Zorgt ervoor dat het spel niet van grootte veranderd kan worden
 			Console.Write("Hello "); // Stuurt tekst naar de Console
 			Console.WriteLine("world!"); // " en begint een nieuwe regel
+			Console.WriteLine(ballRadius); // ballRadius is de straal van een bal (deze kan je ook aanpassen)
 
 			// Voorbeeld: een witte en een zwarte bal worden aangemaakt.
 			// De volgorde is belangrijk: De witte bal is nu balls[0] en de zwarte bal is balls[1].

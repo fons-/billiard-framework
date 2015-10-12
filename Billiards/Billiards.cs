@@ -9,7 +9,7 @@ namespace Billiards
 		{
 			foreach(Ball ball in balls)
 			{
-				DrawBall(ball.position, ball.n);
+				DrawBall(ball.position, ball.Radius, ball.n);
 			}
 		}
 

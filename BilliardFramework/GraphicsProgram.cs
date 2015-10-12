@@ -10,8 +10,6 @@ namespace BilliardFramework
 {
 	public class GraphicsProgram : IDisposable
 	{
-		public float ballRadius = 10f;
-
 		public GraphicsProgram(string[] arguments)
 		{
 			RenderWindow.Instance.program = this;
@@ -71,7 +69,7 @@ namespace BilliardFramework
 			GL.End();
 		}
 
-		public void DrawBall(Vector2 position, int n)
+		public void DrawBall(Vector2 position, float ballRadius, int n)
 		{
 			GL.Color4(BallColor(n));
 			DrawImage(position - new Vector2(ballRadius, ballRadius), 2f * ballRadius, 2f * ballRadius, "ball");

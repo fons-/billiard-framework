@@ -83,10 +83,10 @@ namespace BilliardFramework
 
 			GL.BindTexture(TextureTarget.Texture2D, TextureManager.GetTexture("background"));
 			GL.Begin(PrimitiveType.Quads);
-			GL.TexCoord2(0f, Height / 256f); GL.Vertex2(Vector2.Zero);
+			GL.TexCoord2(0f, Height / 128f); GL.Vertex2(Vector2.Zero);
 			GL.TexCoord2(0f, 0f); GL.Vertex2(new Vector2(0, Height));
-			GL.TexCoord2(Width / 256f, 0f); GL.Vertex2(new Vector2(Width, Height));
-			GL.TexCoord2(Width / 256f, Height / 256f); GL.Vertex2(new Vector2(Width, 0));
+			GL.TexCoord2(Width / 128f, 0f); GL.Vertex2(new Vector2(Width, Height));
+			GL.TexCoord2(Width / 128f, Height / 128f); GL.Vertex2(new Vector2(Width, 0));
 			GL.End();
 
 			program.Render();
